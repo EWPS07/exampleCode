@@ -1,0 +1,46 @@
+version: 0.2
+
+env:
+  variables:
+    ENV: "dev"
+  parameter-store:
+    AMZN_BUCKET: "AMZN_BUCKET"
+    AMZN_ACCESS_KEY: "AMZN_ACCESS_KEY"
+    AMZN_SECRET_ACCESS_KEY: "AMZN_SECRET_ACCESS_KEY"
+    Braintree_Merchant_Id: "Braintree_Merchant_Id"
+    Braintree_Public_Key: "Braintree_Public_Key"
+    Braintree_Private_Key: "Braintree_Private_Key"
+    Facebook_TestUserToken: "Facebook_TestUserToken"
+    Facebook_TestAppToken: "Facebook_TestAppToken"
+    Facebook_TestClientID: "Facebook_TestClientID"
+    Facebook_TestClientSecret: "Facebook_TestClientSecret"
+    FacebookClientID: "FacebookClientID"
+    FacebookClientSecret: "FacebookClientSecret"
+    GooglePlusClientSecret: "GooglePlusClientSecret"
+    GooglePlusClientID: "GooglePlusClientID"
+    InstagramClientID: "InstagramClientID"
+    InstagramClientSecret: "InstagramClientSecret"
+    JWT_SECRET: "JWT_SECRET"
+    mongoDevCluster: "mongoDevCluster"
+    mongoProdCluster: "mongoProdCluster"
+    Pusher_Chatkit_Instance_Locator: "Pusher_Chatkit_Instance_Locator"
+    Pusher_Chatkit_Secret_Key: "Pusher_Chatkit_Secret_Key"    
+phases:
+  install:
+    commands:
+      - echo install packages...
+      - npm install -g babel babel-cli
+      - sudo npm install -g --force nodemon
+      - npm install
+      - echo packages installed 
+  build:
+    commands:
+      - echo building...
+      - npm build
+  post_build:
+    commands:
+      - echo project built...
+artifacts:    
+  files:
+    - '**/*'
+  location: codepipeline-us-west-2-992712918173

@@ -1,0 +1,13 @@
+/* element {
+    --main-bg-color: brown;
+}
+element {
+    background-color: var(--main-bg-color);
+} */
+
+/* .App-header {
+    --left-green: #35b574;
+    --right-green: #5ebb62;
+
+    background: linear-gradient(from left to right, var(--left-green), var(--right-green))
+} */
